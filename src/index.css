@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #140d06;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+@theme {
+  --font-display: "Cinzel", Georgia, serif;
+  --font-book: "EB Garamond", Georgia, serif;
+}
+
+/* ---------- Book look & feel ---------- */
+.scene {
+  perspective: 2200px;
+  perspective-origin: 50% 45%;
+}
+
+.paper {
+  background-color: #f6ecd9;
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.75), transparent 55%),
+    radial-gradient(circle at 85% 90%, rgba(190, 160, 110, 0.25), transparent 60%),
+    linear-gradient(135deg, rgba(0, 0, 0, 0.02) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.02) 50%, rgba(0, 0, 0, 0.02) 75%, transparent 75%);
+  background-size: auto, auto, 6px 6px;
+  color: #3a2a16;
+}
+
+.paper-back {
+  background-color: #efe3cc;
+  background-image: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.6), transparent 60%);
+}
+
+.gutter-left {
+  background: linear-gradient(to left, rgba(60, 38, 14, 0.38), rgba(60, 38, 14, 0.06) 7%, rgba(0, 0, 0, 0) 16%);
+}
+
+.gutter-right {
+  background: linear-gradient(to right, rgba(60, 38, 14, 0.38), rgba(60, 38, 14, 0.06) 7%, rgba(0, 0, 0, 0) 16%);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.gold-text {
+  background: linear-gradient(180deg, #f8e4a8 0%, #d9a94a 55%, #b57b22 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: #e9c372;
+  box-shadow: 0 0 0 3px rgba(233, 195, 114, 0.25);
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+input[type="range"]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border: none;
+  border-radius: 50%;
+  background: #e9c372;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1109;
+}
+::-webkit-scrollbar-thumb {
+  background: #4a3419;
+  border-radius: 999px;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-float-up {
+  animation: floatUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.14) 37%, rgba(255, 255, 255, 0.04) 63%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
