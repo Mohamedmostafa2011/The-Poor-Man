@@ -18,7 +18,7 @@
  *  (public/audio/story-narration.mp3).
  * =======================================================================*/
 
-export const PDF_URL = "";
+export const PDF_URL = "https://huggingface.co/datasets/MidoSTM11/Mido/resolve/main/THE%20POOR%20MAN_20261010_160010_0000.pdf";
 
 export const AUDIO_URL = `${import.meta.env.BASE_URL}audio/story-narration.mp3`;
 
